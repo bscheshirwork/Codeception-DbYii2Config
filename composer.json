@@ -1,0 +1,21 @@
+{
+    "name":"bscheshirwork/DbYii2Config",
+    "description":"Connection 'Db' codeception module to 'Yii2' module database settings",
+    "keywords":["Codeception", "Db", "Yii2", "acceptance testing", "functional testing"],
+    "type":"library",
+    "license":"MIT",
+    "authors":[
+        {
+            "name":"BSCheshir",
+            "email":"bscheshirwork@gmail.com",
+        }
+    ],
+    "autoload":{
+        "psr-4":{
+            "bscheshirwork\\Codeception\\Module\\": "\\",
+        }
+    },
+    "require": {
+        "codeception/base": "*"
+    }
+}

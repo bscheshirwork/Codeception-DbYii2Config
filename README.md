@@ -69,6 +69,6 @@ modules:
               - email
               - ORM
               - Fixtures
-        - \bscheshirwork\DbYii2Config:
+        - \bscheshirwork\Codeception\Module\DbYii2Config:
             dump: ../common/tests/_data/dump.sql #relative path from "codeception.yml"
 ```

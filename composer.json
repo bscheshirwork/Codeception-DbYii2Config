@@ -1,5 +1,5 @@
 {
-    "name":"bscheshirwork/Codeception-DbYii2Config",
+    "name":"bscheshirwork/codeception-db-yii2-config",
     "description":"Connection 'Db' codeception module to 'Yii2' module database settings",
     "keywords":["Codeception", "Db", "Yii2", "acceptance testing", "functional testing"],
     "type":"library",

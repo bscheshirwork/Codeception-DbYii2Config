@@ -12,7 +12,7 @@
     ],
     "autoload":{
         "psr-4":{
-            "bscheshirwork\\Codeception\\Module\\": "\\",
+            "bscheshirwork\\Codeception\\Module\\": "\\"
         }
     },
     "require": {

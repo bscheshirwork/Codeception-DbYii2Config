@@ -72,3 +72,10 @@ modules:
         - \bscheshirwork\Codeception\Module\DbYii2Config:
             dump: ../common/tests/_data/dump.sql #relative path from "codeception.yml"
 ```
+#Installation
+Add to you test environment`composer.json`
+```
+    "require": {
+        "bscheshirwork/codeception-db-yii2-config": "*"
+    }
+```

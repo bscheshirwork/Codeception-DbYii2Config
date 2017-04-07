@@ -2,6 +2,7 @@
 namespace bscheshirwork\Codeception\Module;
 
 use Codeception\Configuration;
+use Codeception\Exception\ModuleConfigException;
 use Codeception\Lib\Connector\Yii2 as Yii2Connector;
 
 /**
@@ -26,10 +27,17 @@ class DbYii2Config extends \Codeception\Module\Db
 
     public function _setConfig($config)
     {
-        $module = $this->getModule('Yii2');
-        $module->_initialize();
+        $moduleConfig = (new \ReflectionMethod($this->moduleContainer, 'getModuleConfig'))
+            ->getClosure($this->moduleContainer)('Yii2');
+        if (!is_file($configFile = Configuration::projectDir() . $moduleConfig['configFile'])) {
+            throw new ModuleConfigException(
+                __CLASS__,
+                "The yii2 application config file does not exist: " . $configFile
+            );
+        }
+        defined('YII_ENV') or define('YII_ENV', 'test');
         $client = new Yii2Connector();
-        $client->configFile = Configuration::projectDir() . $module->_getConfig('configFile');
+        $client->configFile = $configFile;
         $this->db = $client->getApplication()->db;
         parent::_setConfig(array_merge(
             $config,

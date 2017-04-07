@@ -1,7 +1,7 @@
 # DbYii2Config
 Connection 'Db' codeception module to 'Yii2' codeception module database settings
 
-##NO MORE db settings in `codeception.yml`!
+## NO MORE db settings in `codeception.yml`!
 
 Delete duplicate settings `dsn`, `username`, `password`, look at this:
 
@@ -64,15 +64,17 @@ modules:
             host: firefox
             port: 4444
             browser: firefox
+        - \bscheshirwork\Codeception\Module\DbYii2Config:
+            dump: ../common/tests/_data/dump.sql #relative path from "codeception.yml"
         - Yii2:
             part:
               - email
               - ORM
               - Fixtures
-        - \bscheshirwork\Codeception\Module\DbYii2Config:
-            dump: ../common/tests/_data/dump.sql #relative path from "codeception.yml"
 ```
-#Installation
+> Note: the `Db` module is first (restore dump), the `Yii2` module is second (load fixtures)
+
+# Installation
 Add to you test environment`composer.json`
 ```
     "require": {

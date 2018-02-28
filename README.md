@@ -6,7 +6,7 @@ Connection 'Db' codeception module to 'Yii2' codeception module database setting
 Delete duplicate settings `dsn`, `username`, `password`, look at this:
 
 Example `backend/codeception.yml`
-```
+```yml
 namespace: backend\tests
 actor: Tester
 paths:
@@ -29,7 +29,7 @@ modules:
 ```
 
 Example `common/config/main-local.php` (included in `backend/config/test-local.php`)
-```
+```php
 <?php
 return [
     'components' => [
@@ -53,7 +53,7 @@ return [
 ```
 
 Example `backend/tests/acceptance.suite.yml`
-```
+```yml
 class_name: AcceptanceTester
 modules:
     enabled:
@@ -76,7 +76,7 @@ modules:
 
 # Installation
 Add to you test environment`composer.json`
-```
+```json
     "require": {
         "bscheshirwork/codeception-db-yii2-config": "*"
     }

@@ -78,6 +78,6 @@ modules:
 Add to you test environment`composer.json`
 ```json
     "require": {
-        "bscheshirwork/codeception-db-yii2-config": "*"
+        "bscheshirwork/codeception-db-yii2-config": "^2.0"
     }
 ```
